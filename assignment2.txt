@@ -1,0 +1,26 @@
+colored = imread("flowers.jpg");
+red = colored(:,:,1);
+green = colored(:,:,2);
+blue = colored(:,:,3);
+% figure, imshow(red);
+% figure, imshow(green);
+% figure, imshow(blue);
+% figure, imshow(colored);
+
+gray = imread("pout.tif")
+% figure, imshow(gray)
+figure, imhist(gray)
+
+gray2 = histeq(gray)
+figure, imshow(gray2)
+figure, imhist(gray2)
+
+a = imread("concordaerial.png")
+figure, imshow(a)
+ref = imread("concordorthophoto.png")
+figure, imshow(ref)
+figure, imhist(a)
+figure, imhist(ref)
+output = imhistmatch(a, ref)
+figure, imshow(output)
+figure, imhist(output)
